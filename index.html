@@ -1,93 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-        header h1 {
-            text-align: center;
-            text-transform: uppercase;
-            margin: 0;
-        }
-        .main-section {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-            border: #ccc 1px solid;
-        }
-        h2 {
-            color: #333;
-        }
-        .contact-info, .education, .experience, .skills {
-            margin-bottom: 20px;
-        }
-        .contact-info ul {
-            list-style: none;
-            padding: 0;
-        }
-        .contact-info ul li {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>My Name</h1>
-    </header>
-    <div class="container">
-        <section class="main-section">
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <ul>
-                    <li>Email: myemail@example.com</li>
-                    <li>Phone: 123-456-7890</li>
-                    <li>LinkedIn: <a href="https://linkedin.com/in/myprofile" target="_blank">myprofile</a></li>
-                </ul>
-            </div>
-            <div class="education">
-                <h2>Education</h2>
-                <p>B.S. in Computer Engineering, DGIST, Daegu, South Korea</p>
-                <p>Expected Graduation: 2024</p>
-            </div>
-            <div class="experience">
-                <h2>Experience</h2>
-                <p><strong>Intern</strong> at XYZ Company</p>
-                <p>June 2023 - August 2023</p>
-                <ul>
-                    <li>Worked on AI and cybersecurity projects.</li>
-                    <li>Developed Python scripts for data analysis.</li>
-                </ul>
-            </div>
-            <div class="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Python, Pytorch</li>
-                    <li>Rust</li>
-                    <li>Machine Learning</li>
-                    <li>Cybersecurity</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-</body>
-</html>
+---
+layout: default
+---
+
+
+{% include career-profile.html %}
+
+{% unless site.data.data.sidebar.education %}
+  {% include education.html %}
+{% endunless %}
+
+{% include experiences.html %}
+
+{% include certifications.html %}
+
+{% include projects.html %}
+
+{% include oss-contributions.html %}
+
+{% include publications.html %}
+
+{% include skills.html %}
+
